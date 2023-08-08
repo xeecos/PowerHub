@@ -30,3 +30,13 @@
 *.exe
 *.out
 *.app
+
+.pio
+.vscode
+.DS_STORE
+examples
+*.yml
+# *.txt
+component.mk
+library.json
+library.properties
