@@ -15,7 +15,19 @@ void notFound(AsyncWebServerRequest *request)
 
 void service_init()
 {
+    WiFi.mode(WIFI_AP_STA);
+    WiFi.setAutoConnect(true);
+    WiFi.setAutoReconnect(true);
     WiFi.softAP("EZ-SNAP", "");
+    // int retry = 10;
+    // while(!WiFi.isConnected()&&retry)
+    // {
+    //     USBSerial.print(".");
+    //     delay(1000);
+    //     retry--;
+    // }
+    // USBSerial.println("");
+    USBSerial.println("EZ-SNAP Ready!");
     server.on("/status", HTTP_GET, [](AsyncWebServerRequest *request)
               {
         char * result = (char*)malloc(64);

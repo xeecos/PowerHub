@@ -3,6 +3,7 @@
 #include "service.h"
 void setup()
 {
+    USBSerial.begin();
     snap_init();
     service_init();
 }
